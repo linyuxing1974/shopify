@@ -1,0 +1,115 @@
+.inline1 {
+color: blue;
+}
+.inline3 {
+  background-color:rgb(149, 149, 235)
+}
+.inline4 {
+  color: red;
+  text-decoration-style: dotted green;
+}
+
+.font1 {
+  font-family: "メイリオ";
+}
+
+.button {
+  border: 0;
+  line-height: 4.5;
+  padding: 0 80px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  background-color: rgb(233, 113, 1);
+}
+
+h2 {
+  font-family: メイリオ;
+}
+
+.inquiry {
+    padding: 5px;
+    border: 4px solid #1f7427;
+}
+
+/* 課題 */
+@media screen and (max-width: 589px) {
+  .pc-menu {
+    display: none;
+  }
+}
+/* 画面サイズが1280px以上の時はスマホ用メニューは非表示 */
+@media screen and (min-width: 590px) {
+  .sp-menu {
+    display: none;
+  }
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background: #fff;
+}
+
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+  display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;/* 重なり順を一番上にする */
+  cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #333;
+  transition: 0.5s;
+  position: absolute;
+}
+
+/* 三本線の一番上の棒の位置調整 */
+.drawer_open span:before {
+  bottom: 8px;
+}
+
+/* 三本線の一番下の棒の位置調整 */
+.drawer_open span:after {
+  top: 8px;
+}
+
+/* メニューのデザイン*/
+.nav_content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%; 
+  
+/* メニューを画面の外に飛ばす */
+  z-index: 99;
+  background: #fff;
+  transition: .5s;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer_input:checked ~ .nav_content {
+  left: 0;/* メニューを画面に入れる */
+}
